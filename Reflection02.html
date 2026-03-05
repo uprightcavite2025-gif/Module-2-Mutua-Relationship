@@ -1,0 +1,182 @@
+<!-- =========================
+Atria Reflection (Yes/No) + Conditional Feedback
+UPDATE:
+- Yes/No buttons are plain white by default
+- Buttons only add color on hover and when selected
+- Upper block redesigned for cleaner readability (less messy)
+Office-based | AnewSpring-safe | Inline styles + minimal JS
+========================= -->
+
+<div id="atriaRefYN" style="max-width:900px;margin:18px auto;
+font-family:'Glacial Indifference',Arial,sans-serif;color:#000C48;">
+
+  <style>
+    @keyframes atriaFadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .atriaBtn {
+      background:#FFFFFF;
+      color:#000C48;
+      border:1px solid rgba(0,12,72,.15);
+      transition:background .15s ease, border-color .15s ease, transform .08s ease;
+    }
+    .atriaBtn:hover {
+      background:rgba(205,255,252,.85);
+      border-color:rgba(63,194,194,.55);
+    }
+    .atriaBtn:active { transform:scale(.99); }
+    .atriaBtnSelected {
+      background:rgba(63,194,194,.22) !important;
+      border-color:rgba(63,194,194,.70) !important;
+    }
+  </style>
+
+  <!-- Clean Header / Prompt -->
+  <div style="padding:16px 18px;border-radius:16px;
+              background:linear-gradient(135deg,#CDFFFC,#FFFFFF);
+              border:1px solid rgba(63,194,194,.40);
+              box-shadow:0 10px 22px rgba(0,12,72,.08);
+              animation:atriaFadeUp .45s ease-out;">
+
+    <div style="font-family:'Montserrat',Arial,sans-serif;
+                font-size:20px;font-weight:800;color:#211499;line-height:1.2;">
+      Reflection
+    </div>
+
+    <div style="margin-top:10px;padding:12px 12px;border-radius:12px;
+                background:#FFFFFF;border:1px solid rgba(0,12,72,.10);">
+      <div style="font-family:'HK Grotesk',Arial,sans-serif;
+                  font-weight:900;color:#367484;margin-bottom:6px;">
+        Think of one demanding conversation
+      </div>
+
+      <div style="font-size:14.5px;line-height:1.55;color:rgba(0,12,72,.84);">
+        Did your interaction signals remain steady?<br>
+        <span style="color:rgba(0,12,72,.70);font-size:13.5px;">
+          Refer to your <b>Relational Trust Micro-Commitment</b> result from the previous activity.
+        </span>
+        <br><br>
+        Or did the pace of the situation change the tone of the conversation?
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:13.5px;color:rgba(0,12,72,.72);">
+      Awareness of these patterns strengthens relational clarity.
+    </div>
+  </div>
+
+  <!-- Answer -->
+  <div style="margin-top:12px;padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(0,12,72,.12);
+              box-shadow:0 6px 16px rgba(0,12,72,.06);animation:atriaFadeUp .55s ease-out;">
+
+    <div style="font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;color:#211499;margin-bottom:10px;">
+      Answer (Yes / No)
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button type="button" id="refYes" class="atriaBtn"
+        style="cursor:pointer;flex:1 1 240px;min-width:220px;
+               padding:12px 14px;border-radius:14px;
+               font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;text-align:left;">
+        <div style="font-size:14.5px;">Yes</div>
+        <div style="font-size:13px;color:rgba(0,12,72,.70);margin-top:2px;">
+          Signals stayed steady
+        </div>
+      </button>
+
+      <button type="button" id="refNo" class="atriaBtn"
+        style="cursor:pointer;flex:1 1 240px;min-width:220px;
+               padding:12px 14px;border-radius:14px;
+               font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;text-align:left;">
+        <div style="font-size:14.5px;">No</div>
+        <div style="font-size:13px;color:rgba(0,12,72,.70);margin-top:2px;">
+          Pace changed my tone
+        </div>
+      </button>
+    </div>
+
+    <div style="margin-top:10px;font-size:12.8px;color:rgba(0,12,72,.62);">
+      Choose what others likely experienced — not what you intended.
+    </div>
+  </div>
+
+  <!-- Feedback: YES -->
+  <div id="fbYes" style="display:none;margin-top:12px;padding:14px;border-radius:16px;
+              background:rgba(205,255,252,.80);border:1px solid rgba(63,194,194,.40);
+              box-shadow:0 6px 16px rgba(0,12,72,.06);animation:atriaFadeUp .45s ease-out;">
+    <div style="font-family:'Montserrat',Arial,sans-serif;font-size:16.5px;font-weight:800;color:#367484;margin-bottom:6px;">
+      Feedback
+    </div>
+
+    <div style="font-size:14.5px;line-height:1.6;color:#000C48;">
+      Good. This suggests your relational signal is becoming <b>predictable under pressure</b> — which is exactly what your
+      Micro-Commitment practice is designed to build.<br><br>
+
+      Keep it simple: repeat your <b>chosen definition</b> in the next demanding conversation and watch for one sign of increased
+      participation (earlier concerns, clearer disagreement, more openness).<br><br>
+
+      The next step is not adding more behaviors. It is <b>strengthening consistency</b>.
+    </div>
+
+    <div style="margin-top:10px;padding:10px 12px;border-radius:12px;background:#FFFFFF;border:1px solid rgba(63,194,194,.45);
+                font-weight:900;text-align:center;">
+      Stay steady. That stability creates safety.
+    </div>
+  </div>
+
+  <!-- Feedback: NO -->
+  <div id="fbNo" style="display:none;margin-top:12px;padding:14px;border-radius:16px;
+              background:rgba(33,20,153,.06);border:1px solid rgba(33,20,153,.20);
+              box-shadow:0 6px 16px rgba(0,12,72,.06);animation:atriaFadeUp .45s ease-out;">
+    <div style="font-family:'Montserrat',Arial,sans-serif;font-size:16.5px;font-weight:800;color:#211499;margin-bottom:6px;">
+      Feedback
+    </div>
+
+    <div style="font-size:14.5px;line-height:1.6;color:#000C48;">
+      That’s normal — pressure often narrows relational steadiness first.<br><br>
+
+      Treat this as data: it means your signal is still <b>fragile under pace</b> — which is why repetition matters.<br><br>
+
+      One adjustment this week: slow the first <b>5 seconds</b>, then execute your chosen definition once
+      (one question, one pause, one invitation). That single move often prevents tone drift.<br><br>
+
+      The goal is not perfect calm. The goal is <b>predictable behavior</b> when it matters most.
+    </div>
+
+    <div style="margin-top:10px;padding:10px 12px;border-radius:12px;background:#FFFFFF;border:1px solid rgba(63,194,194,.45);
+                font-weight:900;text-align:center;">
+      Reset the pace → apply the definition once → return to the conversation.
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const yesBtn = document.getElementById("refYes");
+  const noBtn  = document.getElementById("refNo");
+  const fbYes  = document.getElementById("fbYes");
+  const fbNo   = document.getElementById("fbNo");
+
+  function clearSelected(){
+    yesBtn.classList.remove("atriaBtnSelected");
+    noBtn.classList.remove("atriaBtnSelected");
+    fbYes.style.display = "none";
+    fbNo.style.display  = "none";
+  }
+
+  function setActive(which){
+    clearSelected();
+    if(which === "yes"){
+      yesBtn.classList.add("atriaBtnSelected");
+      fbYes.style.display = "block";
+      setTimeout(() => fbYes.scrollIntoView({behavior:"smooth", block:"start"}), 60);
+    } else {
+      noBtn.classList.add("atriaBtnSelected");
+      fbNo.style.display = "block";
+      setTimeout(() => fbNo.scrollIntoView({behavior:"smooth", block:"start"}), 60);
+    }
+  }
+
+  yesBtn.addEventListener("click", () => setActive("yes"));
+  noBtn.addEventListener("click",  () => setActive("no"));
+})();
+</script>
