@@ -1,0 +1,224 @@
+<!-- Step 2 (Page 1) + 1-Minute Conversation Scan (Page 2)
+Atria style | Mobile-friendly | AnewSpring-safe | Inline CSS + minimal JS
+-->
+
+<div id="atriaStep2Wrap" style="max-width:920px;margin:16px auto;font-family:'Glacial Indifference',Arial,sans-serif;color:#000C48;">
+
+  <style>
+    @keyframes atriaFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .btnPlain{
+      background:#fff;border:1px solid rgba(0,12,72,.15);color:#000C48;border-radius:12px;
+      padding:10px 14px;font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;cursor:pointer;
+      transition:background .15s ease,border-color .15s ease,transform .08s ease;
+    }
+    .btnPlain:hover{ background:rgba(205,255,252,.85); border-color:rgba(63,194,194,.55); }
+    .btnPrimary{
+      background:#211499;border:1px solid rgba(33,20,153,.20);color:#fff;border-radius:12px;
+      padding:10px 14px;font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;cursor:pointer;
+      transition:filter .15s ease,transform .08s ease;
+    }
+    .btnPrimary:hover{ filter:brightness(1.05); }
+    .btnPlain:active,.btnPrimary:active{ transform:scale(.99); }
+
+    .cardShell{
+      padding:16px 18px;border-radius:16px;
+      background:linear-gradient(135deg,#FFFFFF,#CDFFFC);
+      border:1px solid rgba(63,194,194,.40);
+      box-shadow:0 10px 22px rgba(0,12,72,.08);
+      animation:atriaFadeUp .45s ease-out;
+    }
+    .title{
+      font-family:'Montserrat',Arial,sans-serif;font-size:19px;font-weight:800;color:#211499;
+    }
+    .body{ margin-top:8px;font-size:14.6px;line-height:1.55;color:rgba(0,12,72,.84); }
+    .boxWhite{
+      margin-top:10px;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid rgba(0,12,72,.10);
+    }
+    .boxIndigo{
+      margin-top:10px;padding:10px 12px;border-radius:12px;background:rgba(33,20,153,.06);
+      border:1px solid rgba(33,20,153,.16);font-size:14px;line-height:1.45;
+    }
+    .boxTeal{
+      margin-top:10px;padding:10px 12px;border-radius:12px;background:#CDFFFC;
+      border:1px solid rgba(63,194,194,.35);font-size:14px;line-height:1.45;
+    }
+    ul.clean{
+      margin:6px 0 0 18px;padding:0;font-size:14.4px;line-height:1.5;color:rgba(0,12,72,.84);
+    }
+    .pill{
+      display:inline-block;padding:6px 10px;border-radius:999px;
+      background:rgba(33,20,153,.08);border:1px solid rgba(33,20,153,.18);
+      font-size:12.5px;font-weight:900;color:#211499;
+    }
+  </style>
+
+  <!-- PAGE 1: Step 2 -->
+  <div id="pageStep2" class="cardShell">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start;">
+      <div class="title">Step 2 — Observe Interaction Changes</div>
+      <div class="pill">Page 1 of 2</div>
+    </div>
+
+    <div class="body">
+      During these days, pay attention to how conversations unfold.<br>
+      Look for small indicators that participation may be changing.
+    </div>
+
+    <div class="boxWhite">
+      <div style="font-weight:800;color:#211499;font-size:14px;margin-bottom:4px;">Examples may include</div>
+      <ul class="clean">
+        <li>someone continues explaining their idea instead of stopping early</li>
+        <li>someone raises a concern sooner than usual</li>
+        <li>someone adds additional context to the discussion</li>
+        <li>a conversation becomes more open instead of cautious</li>
+      </ul>
+    </div>
+
+    <div class="boxIndigo">
+      Research on psychological safety shows that when people repeatedly experience respectful and steady interaction signals,
+      they become more willing to contribute ideas and concerns <b>(Edmondson, 1999).</b>
+    </div>
+
+    <div class="boxTeal">
+      These small shifts are often the first signs that <b>relational trust is strengthening.</b>
+    </div>
+
+    <div style="margin-top:12px;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;">
+      <button type="button" class="btnPrimary" id="toScan">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2: 1-Minute Conversation Scan -->
+  <div id="pageScan" class="cardShell" style="display:none;">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start;">
+      <div>
+        <div class="title">1-Minute Conversation Scan</div>
+        <div style="margin-top:4px;font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;color:#367484;">
+          (Optional Practice Tool)
+        </div>
+      </div>
+      <div class="pill">Page 2 of 2</div>
+    </div>
+
+    <div class="body" style="margin-top:10px;">
+      During the next few days, you may use this short scan after a conversation or meeting.<br>
+      It helps you quickly notice how your relational signal appeared during the interaction.<br><br>
+      This is not required for every conversation.<br>
+      Use it when you want to pause briefly and reflect on how the interaction unfolded.
+    </div>
+
+    <div class="boxWhite" style="font-size:13.6px;line-height:1.45;color:rgba(0,12,72,.78);">
+      You can write this on any medium you prefer — digital notes, phone notes, or a notebook.
+    </div>
+
+    <div class="boxWhite">
+      <div style="font-weight:900;color:#367484;margin-bottom:8px;">After a conversation, ask yourself:</div>
+
+      <div style="font-size:14.4px;line-height:1.65;color:rgba(0,12,72,.84);">
+        <b>1️⃣ Did I apply my chosen relational signal?</b><br>
+        Examples:
+        <div style="margin-top:6px;margin-left:14px;">
+          • Did I clarify before reacting?<br>
+          • Did I invite concerns before closing the discussion?<br>
+          • Did I allow the other person to finish speaking?
+        </div>
+        <div style="margin-top:8px;"><b>Yes / Partly / Not yet</b></div>
+
+        <hr style="border:none;border-top:1px solid rgba(0,12,72,.10);margin:12px 0;">
+
+        <b>2️⃣ What happened in the interaction?</b><br>
+        Did the conversation become:
+        <div style="margin-top:6px;margin-left:14px;">
+          • more open<br>
+          • neutral<br>
+          • cautious
+        </div>
+
+        <div class="boxIndigo" style="margin-top:10px;">
+          Trust research shows that interaction signals influence whether people feel comfortable contributing ideas and concerns
+          <b>(Edmondson, 1999).</b>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(0,12,72,.10);margin:12px 0;">
+
+        <b>3️⃣ What would I repeat next time?</b><br>
+        Identify one small behavior you would keep or strengthen in your next interaction.<br>
+        Example:
+        <div style="margin-top:6px;margin-left:14px;">
+          • Ask one more clarification question<br>
+          • Pause before responding<br>
+          • Invite input before concluding
+        </div>
+
+        <div style="margin-top:10px;font-size:13.6px;line-height:1.45;color:rgba(0,12,72,.74);">
+          Small adjustments repeated over time gradually shape interaction patterns.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+      <div class="boxWhite" style="flex:1 1 320px;min-width:260px;">
+        <div style="font-weight:900;color:#211499;margin-bottom:6px;">Why this quick scan helps</div>
+        <div style="font-size:13.8px;line-height:1.55;color:rgba(0,12,72,.82);">
+          Brief reflection immediately after an interaction helps reinforce behavioral learning.<br>
+          Experiential learning research shows that short reflection moments strengthen the connection between action and awareness
+          <b>(Kolb, 1984).</b><br><br>
+          Over time, this awareness helps behaviors become more intentional and consistent.
+        </div>
+      </div>
+
+      <div class="boxWhite" style="flex:1 1 320px;min-width:260px;">
+        <div style="font-weight:900;color:#211499;margin-bottom:6px;">How you may use this tool</div>
+        <div style="font-size:13.8px;line-height:1.55;color:rgba(0,12,72,.82);">
+          You may run this scan:
+          <div style="margin-top:6px;margin-left:14px;">
+            • after a meeting<br>
+            • after a feedback conversation<br>
+            • after a discussion where tension appeared<br>
+            • after a decision conversation
+          </div>
+          <div style="margin-top:8px;">
+            You do not need to do it every time.<br>
+            Even using it once or twice during the week can increase awareness of how relational signals appear in real conversations.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <button type="button" class="btnPlain" id="backToStep2">← Back</button>
+      <button type="button" class="btnPlain" id="doneScan">Done</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const step2 = document.getElementById("pageStep2");
+  const scan  = document.getElementById("pageScan");
+
+  const toScan = document.getElementById("toScan");
+  const back   = document.getElementById("backToStep2");
+  const done   = document.getElementById("doneScan");
+
+  function showScan(){
+    step2.style.display = "none";
+    scan.style.display  = "block";
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function showStep2(){
+    scan.style.display  = "none";
+    step2.style.display = "block";
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  toScan.addEventListener("click", showScan);
+  back.addEventListener("click", showStep2);
+  done.addEventListener("click", function(){
+    // optional: small non-intrusive confirmation
+    done.textContent = "Done ✓";
+    setTimeout(()=>{ done.textContent="Done"; }, 1200);
+  });
+})();
+</script>
