@@ -1,0 +1,219 @@
+<!-- Step 3 — Record Your Observations (with WORKING Worksheet Download as PNG)
+Atria style | Mobile-friendly | AnewSpring-safe | Inline CSS + minimal JS + Canvas PNG
+Includes: Big writing space on the worksheet (lined) for reflection.
+-->
+
+<div style="max-width:920px;margin:16px auto;font-family:'Glacial Indifference',Arial,sans-serif;color:#000C48;">
+
+  <style>
+    @keyframes atriaFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .btnPrimary{
+      background:#211499;border:1px solid rgba(33,20,153,.20);color:#fff;border-radius:12px;
+      padding:10px 16px;font-family:'HK Grotesk',Arial,sans-serif;font-weight:900;cursor:pointer;
+      transition:filter .15s ease,transform .08s ease;
+    }
+    .btnPrimary:hover{ filter:brightness(1.05); }
+    .btnPrimary:active{ transform:scale(.99); }
+  </style>
+
+  <div style="padding:16px 18px;border-radius:16px;
+              background:linear-gradient(135deg,#FFFFFF,#CDFFFC);
+              border:1px solid rgba(63,194,194,.40);
+              box-shadow:0 10px 22px rgba(0,12,72,.08);
+              animation:atriaFadeUp .45s ease-out;">
+
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">
+      <div style="font-family:'Montserrat',Arial,sans-serif;font-size:19px;font-weight:800;color:#211499;">
+        Step 3 — Record Your Observations
+      </div>
+      <div style="display:inline-block;padding:6px 10px;border-radius:999px;
+                  background:rgba(33,20,153,.08);border:1px solid rgba(33,20,153,.18);
+                  font-size:12.5px;font-weight:900;color:#211499;">
+        Reflection
+      </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:14.6px;line-height:1.55;color:rgba(0,12,72,.84);">
+      At the end of the observation period, take a few minutes to reflect on your experience.<br>
+      You will be asked to answer the following questions.
+    </div>
+
+    <!-- IMPORTANT -->
+    <div style="margin-top:10px;padding:10px 12px;border-radius:12px;
+                background:#FFF4E5;border:1px solid rgba(255,166,0,.35);
+                font-size:14px;line-height:1.45;">
+      <b>⚠ Important</b><br>
+      Please download the <b>Relational Signal Observation Worksheet</b> before starting this step so you can record your reflections clearly.
+    </div>
+
+    <!-- WORKING DOWNLOAD BUTTON -->
+    <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button type="button" class="btnPrimary" id="downloadWorksheetBtn">Download Worksheet (PNG)</button>
+      <span id="dlStatus" style="font-size:13.5px;color:rgba(0,12,72,.70);"></span>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div style="margin-top:12px;padding:12px;border-radius:14px;background:#FFFFFF;border:1px solid rgba(0,12,72,.10);">
+      <div style="font-weight:900;color:#367484;margin-bottom:6px;">Reflect on the following</div>
+      <ul style="margin:6px 0 0 18px;padding:0;font-size:14.4px;line-height:1.55;color:rgba(0,12,72,.84);">
+        <li>Which relational signal did you practice this week?</li>
+        <li>In which situation did you consciously apply it?</li>
+        <li>What did you observe in the interaction?</li>
+        <li>What felt easier than expected?</li>
+        <li>What remained challenging?</li>
+      </ul>
+    </div>
+
+    <!-- GUIDANCE -->
+    <div style="margin-top:10px;font-size:14.5px;line-height:1.55;color:rgba(0,12,72,.84);">
+      Your responses do not need to be long.<br>
+      Focus on <b>specific situations from real conversations.</b>
+    </div>
+
+    <!-- RESEARCH -->
+    <div style="margin-top:10px;padding:10px 12px;border-radius:12px;
+                background:rgba(33,20,153,.06);
+                border:1px solid rgba(33,20,153,.16);
+                font-size:14px;line-height:1.45;">
+      Reflection strengthens behavioral learning because it connects <b>experience with awareness</b> <b>(Kolb, 1984).</b>
+    </div>
+
+    <!-- Hidden canvas for PNG generation -->
+    <canvas id="worksheetCanvas" width="1240" height="1754" style="display:none;"></canvas>
+
+  </div>
+</div>
+
+<script>
+(function(){
+
+const btn = document.getElementById("downloadWorksheetBtn");
+const canvas = document.getElementById("worksheetCanvas");
+const ctx = canvas.getContext("2d");
+
+function roundRect(x,y,w,h,r){
+ctx.beginPath();
+ctx.moveTo(x+r,y);
+ctx.arcTo(x+w,y,x+w,y+h,r);
+ctx.arcTo(x+w,y+h,x,y+h,r);
+ctx.arcTo(x,y+h,x,y,r);
+ctx.arcTo(x,y,x+w,y,r);
+ctx.closePath();
+}
+
+function drawLines(x,y,w,lines){
+ctx.strokeStyle="rgba(0,12,72,.20)";
+ctx.lineWidth=1;
+
+let gap=30;
+
+for(let i=0;i<lines;i++){
+let ly=y+(i*gap);
+ctx.beginPath();
+ctx.moveTo(x,ly);
+ctx.lineTo(x+w,ly);
+ctx.stroke();
+}
+}
+
+function makeWorksheet(){
+
+canvas.width=1240;
+canvas.height=1754;
+
+ctx.fillStyle="#ffffff";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+const dark="#211499";
+const navy="#000C48";
+const teal="#367484";
+
+
+
+/* HEADER */
+
+ctx.fillStyle="#CDFFFC";
+roundRect(60,50,1120,150,20);
+ctx.fill();
+
+ctx.strokeStyle="rgba(63,194,194,.5)";
+ctx.lineWidth=2;
+ctx.stroke();
+
+ctx.fillStyle=dark;
+ctx.font="800 34px Arial";
+ctx.fillText("Relational Signal Observation Worksheet",90,120);
+
+ctx.fillStyle=navy;
+ctx.font="600 18px Arial";
+ctx.fillText("Write your reflections in the space provided for each question.",90,155);
+
+
+
+/* QUESTIONS */
+
+let startY=240;
+
+const questions=[
+"1. Which relational signal did you practice this week?",
+"2. In which situation did you consciously apply it?",
+"3. What did you observe in the interaction?",
+"4. What felt easier than expected?",
+"5. What remained challenging?"
+];
+
+questions.forEach((q,index)=>{
+
+ctx.fillStyle="#FFFFFF";
+roundRect(60,startY,1120,220,16);
+ctx.fill();
+
+ctx.strokeStyle="rgba(0,12,72,.15)";
+ctx.lineWidth=2;
+ctx.stroke();
+
+ctx.fillStyle=teal;
+ctx.font="800 18px Arial";
+ctx.fillText(q,90,startY+40);
+
+/* writing lines */
+
+drawLines(90,startY+70,1060,5);
+
+startY+=250;
+
+});
+
+
+
+/* FOOTER */
+
+ctx.fillStyle="rgba(33,20,153,.07)";
+roundRect(60,canvas.height-110,1120,60,14);
+ctx.fill();
+
+ctx.fillStyle=dark;
+ctx.font="800 22px Arial";
+ctx.fillText("Consistency matters more than quantity.",90,canvas.height-70);
+
+
+
+return canvas.toDataURL("image/png");
+
+}
+
+
+
+btn.addEventListener("click",function(){
+
+const dataUrl=makeWorksheet();
+
+const a=document.createElement("a");
+a.href=dataUrl;
+a.download="relational-signal-observation-worksheet.png";
+a.click();
+
+});
+
+})();
+</script>
